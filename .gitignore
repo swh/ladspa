@@ -4,3 +4,15 @@ config.h.in
 config.sub
 configure
 ltmain.sh
+.deps
+Makefile
+Makefile.in
+autom4te.cache
+config.h
+config.h.in~
+config.log
+config.rpath
+config.status
+libtool
+stamp-h1
+POTFILES
