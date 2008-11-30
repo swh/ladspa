@@ -1,5 +1,4 @@
 aclocal.m4
-autogen.sh
 config.guess
 config.h.in
 config.sub

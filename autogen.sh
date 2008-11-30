@@ -1,6 +1,7 @@
 #! /bin/sh
 
 libtoolize --force --copy
+touch config.rpath
 
 echo aclocal...
 (aclocal --version) < /dev/null > /dev/null 2>&1 || {
