@@ -4,6 +4,7 @@ config.h.in
 config.sub
 configure
 ltmain.sh
+ltconfig
 .deps
 Makefile
 Makefile.in
