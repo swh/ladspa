@@ -9,7 +9,7 @@ echo aclocal...
     exit 1
 }
 
-aclocal || exit 1
+aclocal -I m4 || exit 1
 
 echo autoheader...
 (autoheader --version) < /dev/null > /dev/null 2>&1 || {
@@ -35,6 +35,6 @@ echo autoconf...
 
 autoconf || exit 1
 
-./configure $@
+test -n "$NOCONFIGURE" || ./configure "$@"
 
 exit 0
