@@ -92,7 +92,7 @@ AC_ARG_ENABLE(3dnow, [  --enable-3dnow Enables 3DNow! acceleration], AC_DEFINE_U
 AC_ARG_ENABLE(sse, [  --enable-sse Uses SSE instructions where possible, requires gcc3 and a processor with SSE support], USE_SSE="-msse -mfpmath=sse -malign-double")
 AC_ARG_ENABLE(darwin, [  --enable-darwin Builds plugins that will be shared object in the Darwin OS], DARWIN_CFLAGS="-fno-common -flat_namespace -bundle -undefined suppress -lbundle1.o")
 
-CFLAGS=$lrintf_save_CFLAGS -I@top_srcdir@/intl -I@top_srcdir@
+CFLAGS="$lrintf_save_CFLAGS -I@top_srcdir@/intl -I@top_srcdir@"
 
 if [ echo ${CFLAGS} | grep "\-march=" ]; then
   AC_MSG_WARN([CFLAGS appears to allready contain architecture specifaction, using exiting one])
