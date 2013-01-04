@@ -146,7 +146,6 @@ void _init() {
 
 \#ifdef ENABLE_NLS
 \#define D_(s) dgettext(PACKAGE, s)
-	setlocale(LC_ALL, "");
 	bindtextdomain(PACKAGE, PACKAGE_LOCALE_DIR);
 \#else
 \#define D_(s) (s)
