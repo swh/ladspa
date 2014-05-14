@@ -28,7 +28,7 @@ if ($$root[0] ne "ladspa") {
 $ladspa = $root->[1];
 
 if ($ladspa->[3] ne "global") {
-	die "Can't find global section. Should be immediatly after ladspa\n";
+	die "Can't find global section. Should be immediately after ladspa\n";
 }
 
 @globtags = @{ $ladspa->[4] };

@@ -1,8 +1,8 @@
 Compiling
 ~~~~~~~~~
 You will need libfftw version 2 or 3 installed with 32 bit float support (eg.
-for FFTW3 use --enable-float), for FFTW recommend you specify the approriate
-SIMD isntruction set for your CPU with --enable-sse, --enable-sse2, --enable-k7
+for FFTW3 use --enable-float), for FFTW recommend you specify the appropriate
+SIMD instruction set for your CPU with --enable-sse, --enable-sse2, --enable-k7
 or --enable-altivec. You can get FFTW from http://www.fftw.org/.
 
 Install with
