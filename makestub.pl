@@ -157,7 +157,7 @@ print "}\n";
 
 print <<EOB;
 
-void __attribute__((destructor)) tap_fini() {
+void __attribute__((destructor)) swh_fini() {
 $fini_code
 }
 EOB
