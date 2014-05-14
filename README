@@ -6,6 +6,7 @@ SIMD instruction set for your CPU with --enable-sse, --enable-sse2, --enable-k7
 or --enable-altivec. You can get FFTW from http://www.fftw.org/.
 
 Install with
+   autoreconf -i
    ./configure
    make
    su -c "make install".
