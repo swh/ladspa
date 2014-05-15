@@ -28,7 +28,7 @@ if ($$root[0] ne "ladspa") {
 $ladspa = $root->[1];
 
 if ($ladspa->[3] ne "global") {
-	die "Can't find global section. Should be immediatly after ladspa\n";
+	die "Can't find global section. Should be immediately after ladspa\n";
 }
 
 @globtags = @{ $ladspa->[4] };
@@ -87,7 +87,7 @@ print <<EOB;
 \#ifdef WIN32
 \#define _WINDOWS_DLL_EXPORT_ __declspec(dllexport)
 int bIsFirstTime = 1; 
-void _init(); // forward declaration
+void __attribute__((constructor)) swh_init(); // forward declaration
 \#else
 \#define _WINDOWS_DLL_EXPORT_ 
 \#endif
@@ -124,7 +124,7 @@ const LADSPA_Descriptor *ladspa_descriptor(unsigned long index) {
 
 \#ifdef WIN32
 	if (bIsFirstTime) {
-		_init();
+		swh_init();
 		bIsFirstTime = 0;
 	}
 \#endif
@@ -139,7 +139,7 @@ print "	default:\n		return NULL;\n	}\n}\n\n";
 print $code;
 # Headers for init section
 print <<EOB;
-void _init() {
+void __attribute__((constructor)) swh_init() {
 	char **port_names;
 	LADSPA_PortDescriptor *port_descriptors;
 	LADSPA_PortRangeHint *port_range_hints;
@@ -157,7 +157,7 @@ print "}\n";
 
 print <<EOB;
 
-void _fini() {
+void __attribute__((destructor)) swh_fini() {
 $fini_code
 }
 EOB
