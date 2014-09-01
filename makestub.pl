@@ -139,7 +139,7 @@ print "	default:\n		return NULL;\n	}\n}\n\n";
 print $code;
 # Headers for init section
 print <<EOB;
-void __attribute__((constructor)) swh_init() {
+static void __attribute__((constructor)) swh_init() {
 	char **port_names;
 	LADSPA_PortDescriptor *port_descriptors;
 	LADSPA_PortRangeHint *port_range_hints;
@@ -157,7 +157,7 @@ print "}\n";
 
 print <<EOB;
 
-void __attribute__((destructor)) swh_fini() {
+static void __attribute__((destructor)) swh_fini() {
 $fini_code
 }
 EOB
@@ -462,6 +462,7 @@ EOB
 		free((LADSPA_PortRangeHint *)${label}Descriptor->PortRangeHints);
 		free(${label}Descriptor);
 	}
+	${label}Descriptor = NULL;
 EOB
 
 	$globals .= "\ntypedef struct {\n";
