@@ -186,6 +186,7 @@ over the limit, and tries to get the minimum ammount of distortion.</p>
 
     <callback event="cleanup"><![CDATA[
        free(plugin_data->buffer);
+       free(plugin_data->chunks);
     ]]></callback>
 
     <port label="ingain" dir="input" type="control" hint="default_0">
