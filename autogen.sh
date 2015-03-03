@@ -1,6 +1,6 @@
 #! /bin/sh
 
-libtoolize --force --copy
+([ -x libtoolize ] && libtoolize --force --copy) || glibtoolize --force --copy
 touch config.rpath
 
 echo aclocal...
