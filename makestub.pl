@@ -236,7 +236,7 @@ sub process_plugin {
 		if ($call eq "instantiate") {
 			$c = "";
 			if ($callback_code{"${label}_instantiate"}) {
-				$c .= "\t\u$label *plugin_data = (\u$label *)malloc(sizeof(\u$label));\n";
+				$c .= "\t\u$label *plugin_data = (\u$label *)calloc(1, sizeof(\u$label));\n";
 				for $var (sort keys %i_data) {
 					if ($i_data{$var} =~ /\*/) {
 						$c .= "\t$i_data{$var}$var = NULL;\n";
@@ -252,7 +252,7 @@ sub process_plugin {
 				}
 				$c .= "\n\treturn (LADSPA_Handle)plugin_data;"
 			} else {
-				$c .= "\t\u$label *plugin_data = (\u$label *)malloc(sizeof(\u$label));\n";
+				$c .= "\t\u$label *plugin_data = (\u$label *)calloc(1, sizeof(\u$label));\n";
 				$c .= "\tplugin_data->run_adding_gain = 1.0f;\n";
 				$c .= "\n\treturn (LADSPA_Handle)plugin_data;"
 			}
