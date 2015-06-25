@@ -6,6 +6,7 @@ configure
 ltmain.sh
 ltconfig
 .deps
+.libs
 Makefile
 Makefile.in
 autom4te.cache
@@ -17,3 +18,10 @@ config.status
 libtool
 stamp-h1
 POTFILES
+*.o
+*.a
+*.la
+*.lo
+*[0123456789].c
+*.m4
+metadata/swh-plugins.rdf
