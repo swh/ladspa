@@ -43,7 +43,7 @@ plugindir = @prefix@/lib/ladspa
 
 # Uncomment below for Darwin support.  Or add a conditional for this.
 #AM_CFLAGS = -fno-common -flat_namespace -bundle -undefined suppress -lbundle1.o
-AM_LDFLAGS = -module -avoid-version -Wc,-nostartfiles
+AM_LDFLAGS = -module -avoid-version
 DESTDIR = $(INSTALL_ROOT)
 DISTFN = $(distdir)
 
