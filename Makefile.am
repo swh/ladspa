@@ -33,7 +33,7 @@ plugin_LTLIBRARIES = \
 	latency_1914.la xfade_1915.la sc4m_1916.la \
 	mbeq_1197.la pitch_scale_1193.la pitch_scale_1194.la imp_1199.la
 
-SUBDIRS = m4  po util gsm gverb metadata
+SUBDIRS = po util gsm gverb metadata
 
 # Wacky stuff to stop automake getting confused
 EXTRA_DIST = config.rpath  @top_srcdir@/*.xml @top_srcdir@/*.c @top_srcdir@/*.h \
