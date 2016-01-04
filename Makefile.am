@@ -91,7 +91,7 @@ butterworth_1902_la_SOURCES = butterworth_1902.c
 
 # Rule to build .c files from XML source
 %.c:	%.xml
-	./makestub.pl $*.xml > $*.c
+	! test -f "$*.xml" || ./makestub.pl "$*.xml" > "$*.c"
 
 #strip .libs/$$file;
 
