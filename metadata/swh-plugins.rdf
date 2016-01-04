@@ -126,23 +126,6 @@
     </ladspa:hasSetting>
   </ladspa:DelayPlugin>
 
-  <ladspa:AmplifierPlugin rdf:about="&ladspa;1181">
-    <dc:creator>Steve Harris &lt;steve@plugin.org.uk&gt;</dc:creator>
-    <dc:title>Simple amplifier</dc:title>
-    <ladspa:hasPort>
-      <ladspa:InputControlPort rdf:about="&ladspa;1181.1" ladspa:hasLabel="gain" />
-    </ladspa:hasPort>
-    <ladspa:hasSetting>
-      <ladspa:Default>
-        <ladspa:hasPortValue>
-          <ladspa:PortValue rdf:value="0">
-            <ladspa:forPort rdf:resource="&ladspa;1181.1" />
-          </ladspa:PortValue>
-        </ladspa:hasPortValue>
-      </ladspa:Default>
-    </ladspa:hasSetting>
-  </ladspa:AmplifierPlugin>
-
   <ladspa:PitchPlugin rdf:about="&ladspa;1433">
     <dc:creator>Steve Harris &lt;steve@plugin.org.uk&gt;</dc:creator>
     <dc:title>AM pitchshifter</dc:title>
@@ -170,6 +153,23 @@
       </ladspa:Default>
     </ladspa:hasSetting>
   </ladspa:PitchPlugin>
+
+  <ladspa:AmplifierPlugin rdf:about="&ladspa;1181">
+    <dc:creator>Steve Harris &lt;steve@plugin.org.uk&gt;</dc:creator>
+    <dc:title>Simple amplifier</dc:title>
+    <ladspa:hasPort>
+      <ladspa:InputControlPort rdf:about="&ladspa;1181.1" ladspa:hasLabel="gain" />
+    </ladspa:hasPort>
+    <ladspa:hasSetting>
+      <ladspa:Default>
+        <ladspa:hasPortValue>
+          <ladspa:PortValue rdf:value="0">
+            <ladspa:forPort rdf:resource="&ladspa;1181.1" />
+          </ladspa:PortValue>
+        </ladspa:hasPortValue>
+      </ladspa:Default>
+    </ladspa:hasSetting>
+  </ladspa:AmplifierPlugin>
 
   <ladspa:OscillatorPlugin rdf:about="&ladspa;1416">
     <dc:creator>Steve Harris &lt;steve@plugin.org.uk&gt;</dc:creator>
