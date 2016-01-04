@@ -39,7 +39,7 @@ SUBDIRS = m4  po util gsm gverb metadata
 EXTRA_DIST = config.rpath  @top_srcdir@/*.xml @top_srcdir@/*.c @top_srcdir@/*.h \
 	@top_srcdir@/*.dtd @top_srcdir@/*.pl @top_srcdir@/*.css \
 	@top_srcdir@/impulses/*.h autogen.sh bozosoity-checker.pl
-plugindir = @prefix@/lib/ladspa
+plugindir = $(libdir)/ladspa
 
 # Uncomment below for Darwin support.  Or add a conditional for this.
 #AM_CFLAGS = -fno-common -flat_namespace -bundle -undefined suppress -lbundle1.o
