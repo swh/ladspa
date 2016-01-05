@@ -13,6 +13,7 @@ libpitchscale_a_SOURCES = pitchscale.c
 libpitchscale_a_CFLAGS = $(FFTW_CFLAGS)
 #libpitchscale_a_LIBS = $(FFTW_LIBS)
 libiir_a_SOURCES = iir.c
+libiir_a_CPPFLAGS = -I@top_srcdir@
 #libbuffer_a_SOURCES = buffer.c
 # Disable autoheader. 
 AUTOHEADER=echo
