@@ -51,8 +51,9 @@ while (<>) {
 		print "    <ladspa:hasPort>\n";
 		print "      <ladspa:\u$2\u$3Port rdf:about=\"&ladspa;$pid.$ocnt\" ladspa:hasLabel=\"$1\" />\n";
 		print "    </ladspa:hasPort>\n";
-		if ($5) {
-			$defaults{$ocnt} = $5;
+		$hints = $5;
+		if ($hints && $hints =~ m((default_[a-z0-9]+))) {
+			$defaults{$ocnt} = $hints;
 		}
 	}
 	if (m(<range\s+min="(.*?)"\s+max="(.*?)")) {

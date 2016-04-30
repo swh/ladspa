@@ -10,7 +10,8 @@ plugin_LTLIBRARIES = \
 	dc_remove_1207.la retro_flange_1208.la valve_1209.la \
 	sifter_1210.la tape_delay_1211.la step_muxer_1212.la \
 	foldover_1213.la svf_1214.la gsm_1215.la gverb_1216.la \
-	phasers_1217.la harmonic_gen_1220.la surround_encoder_1401.la \
+	phasers_1217.la harmonic_gen_1220.la vocoder_1337.la \
+	surround_encoder_1401.la \
 	delayorama_1402.la dyson_compress_1403.la crossover_dist_1404.la \
 	valve_rect_1405.la split_1406.la alias_1407.la \
 	satan_maximiser_1408.la karaoke_1409.la gate_1410.la \
