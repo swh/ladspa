@@ -4370,6 +4370,66 @@
     </ladspa:hasSetting>
   </ladspa:DistortionPlugin>
 
+  <ladspa:DistortionPlugin rdf:about="&ladspa;1337">
+    <rdf:type rdf:resource="&ladspa;GeneratorPlugin"/>
+    <dc:creator>Achim Settelmeier &lt;settel-linux@sirlab.de&gt; (adapted by Josh Green and Hexasoft)</dc:creator>
+    <dc:title>Vocoder</dc:title>
+    <ladspa:hasPort>
+      <ladspa:InputControlPort rdf:about="&ladspa;1337.5" ladspa:hasLabel="ctrl_band_count" />
+    </ladspa:hasPort>
+    <ladspa:hasPort>
+      <ladspa:InputControlPort rdf:about="&ladspa;1337.6" ladspa:hasLabel="ctrl_pan" />
+    </ladspa:hasPort>
+    <ladspa:hasPort>
+      <ladspa:InputControlPort rdf:about="&ladspa;1337.7" ladspa:hasLabel="band1" />
+    </ladspa:hasPort>
+    <ladspa:hasPort>
+      <ladspa:InputControlPort rdf:about="&ladspa;1337.8" ladspa:hasLabel="band2" />
+    </ladspa:hasPort>
+    <ladspa:hasPort>
+      <ladspa:InputControlPort rdf:about="&ladspa;1337.9" ladspa:hasLabel="band3" />
+    </ladspa:hasPort>
+    <ladspa:hasPort>
+      <ladspa:InputControlPort rdf:about="&ladspa;1337.10" ladspa:hasLabel="band4" />
+    </ladspa:hasPort>
+    <ladspa:hasPort>
+      <ladspa:InputControlPort rdf:about="&ladspa;1337.11" ladspa:hasLabel="band5" />
+    </ladspa:hasPort>
+    <ladspa:hasPort>
+      <ladspa:InputControlPort rdf:about="&ladspa;1337.12" ladspa:hasLabel="band6" />
+    </ladspa:hasPort>
+    <ladspa:hasPort>
+      <ladspa:InputControlPort rdf:about="&ladspa;1337.13" ladspa:hasLabel="band7" />
+    </ladspa:hasPort>
+    <ladspa:hasPort>
+      <ladspa:InputControlPort rdf:about="&ladspa;1337.14" ladspa:hasLabel="band8" />
+    </ladspa:hasPort>
+    <ladspa:hasPort>
+      <ladspa:InputControlPort rdf:about="&ladspa;1337.15" ladspa:hasLabel="band9" />
+    </ladspa:hasPort>
+    <ladspa:hasPort>
+      <ladspa:InputControlPort rdf:about="&ladspa;1337.16" ladspa:hasLabel="band10" />
+    </ladspa:hasPort>
+    <ladspa:hasPort>
+      <ladspa:InputControlPort rdf:about="&ladspa;1337.17" ladspa:hasLabel="band11" />
+    </ladspa:hasPort>
+    <ladspa:hasPort>
+      <ladspa:InputControlPort rdf:about="&ladspa;1337.18" ladspa:hasLabel="band12" />
+    </ladspa:hasPort>
+    <ladspa:hasPort>
+      <ladspa:InputControlPort rdf:about="&ladspa;1337.19" ladspa:hasLabel="band13" />
+    </ladspa:hasPort>
+    <ladspa:hasPort>
+      <ladspa:InputControlPort rdf:about="&ladspa;1337.20" ladspa:hasLabel="band14" />
+    </ladspa:hasPort>
+    <ladspa:hasPort>
+      <ladspa:InputControlPort rdf:about="&ladspa;1337.21" ladspa:hasLabel="band15" />
+    </ladspa:hasPort>
+    <ladspa:hasPort>
+      <ladspa:InputControlPort rdf:about="&ladspa;1337.22" ladspa:hasLabel="band16" />
+    </ladspa:hasPort>
+  </ladspa:DistortionPlugin>
+
   <ladspa:DistortionPlugin rdf:about="&ladspa;1905">
     <dc:creator>Steve Harris &lt;steve@plugin.org.uk&gt;</dc:creator>
     <dc:title>VyNil (Vinyl Effect)</dc:title>
