@@ -24,6 +24,9 @@
 		<callback event="run">
                   calc_2polebandpass(iirf, gt, center, width, sample_rate);
                   iir_process_buffer_1s_5(iirf, gt, input, output, sample_count,0);
+
+                  // Unused variable
+                  (void)(run_adding_gain);
                 </callback>
 
                 <callback event="activate">                  

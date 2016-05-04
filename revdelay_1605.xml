@@ -103,7 +103,7 @@
 
         for (i=0; i<sample_count; i++) {
           long read_phase, idelay_samples;
-          LADSPA_Data frac, read;
+          LADSPA_Data read;
           LADSPA_Data insamp;
           insamp = in[i];
 
@@ -113,7 +113,6 @@
 
           read_phase = delay2 - write_phase;
           idelay_samples = (long)delay_samples;
-          frac = delay_samples - idelay_samples;
           read = wet * buffer[read_phase]   + (dry * insamp);
 
           if ((write_phase % idelay_samples) < xfade_samp) {

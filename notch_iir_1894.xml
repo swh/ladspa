@@ -30,6 +30,9 @@
                   chebyshev(iirf2, second, 2*CLAMP((int)stages,1,10), IIR_STAGE_HIGHPASS, lfc, 0.5f);
                   iir_process_buffer_ns_5(iirf1, first, input, output, sample_count, RUN_ADDING);
                   iir_process_buffer_ns_5(iirf2, second, input, output, sample_count, 1); /* add to first buffer */
+
+                  // Unused variable
+                  (void)(run_adding_gain);
                 </callback>
 
                 <callback event="activate">                  

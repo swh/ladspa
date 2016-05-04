@@ -27,6 +27,9 @@
 		<callback event="run">
                   chebyshev(iirf, gt, 2*CLAMP((int)stages,1,10), IIR_STAGE_LOWPASS, cutoff/(float)sample_rate, 0.5f);
                   iir_process_buffer_ns_5(iirf, gt, input, output, sample_count,RUN_ADDING);
+
+                  // Unused variable
+                  (void)(run_adding_gain);
                 </callback>
 
                 <callback event="activate">                  
