@@ -25,6 +25,12 @@
     
     <callback event="instantiate"><![CDATA[
       sample_rate = s_rate;
+
+      // Uninitialized variables
+      buffer_mask = 0;
+      delay_samples = 0;
+      last_delay_time = 0;
+      write_phase = 0;
     ]]></callback>
     
     <callback event="activate"><![CDATA[
@@ -112,6 +118,9 @@
       }
       
       plugin_data->write_phase = write_phase;
+
+      // Unused variable
+      (void)(max_delay);
     ]]></callback>
 
     <port label="in" dir="input" type="audio">
@@ -153,6 +162,12 @@
     
     <callback event="instantiate"><![CDATA[
       sample_rate = s_rate;
+
+      // Uninitialized variables
+      buffer_mask = 0;
+      delay_samples = 0;
+      last_delay_time = 0;
+      write_phase = 0;
     ]]></callback>
     
     <callback event="activate"><![CDATA[
@@ -228,6 +243,9 @@
       }
       
       plugin_data->write_phase = write_phase;
+
+      // Unused variable
+      (void)(max_delay);
     ]]></callback>
 
     <port label="in" dir="input" type="audio">
@@ -269,6 +287,12 @@
     
     <callback event="instantiate"><![CDATA[
       sample_rate = s_rate;
+
+      // Uninitialized variables
+      buffer_mask = 0;
+      delay_samples = 0;
+      last_delay_time = 0;
+      write_phase = 0;
     ]]></callback>
     
     <callback event="activate"><![CDATA[
@@ -325,7 +349,7 @@
 
         for (i=0; i<sample_count; i++) {
           long read_phase, idelay_samples;
-          LADSPA_Data written, frac, read;
+          LADSPA_Data frac, read;
 
           delay_samples += delay_samples_slope;
           write_phase++;
@@ -346,6 +370,9 @@
       }
       
       plugin_data->write_phase = write_phase;
+
+      // Unused variable
+      (void)(max_delay);
     ]]></callback>
 
     <port label="in" dir="input" type="audio">

@@ -22,6 +22,12 @@
     
     <callback event="instantiate"><![CDATA[
       sample_rate = s_rate;
+
+      // Uninitialized variables
+      b = 0;
+      first_time = 0;
+      last_decay_time = 0;
+      y = 0;
     ]]></callback>
     
     <callback event="activate"><![CDATA[

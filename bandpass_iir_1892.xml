@@ -22,6 +22,10 @@
 
                 <callback event="instantiate">
                   sample_rate = s_rate;
+
+                  // Uninitialized variables
+                  lfc = 0;
+                  ufc = 0;
                 </callback>
 		<callback event="run">
                   ufc = (center + width*0.5f)/(float)sample_rate;
@@ -30,6 +34,9 @@
                                      chebyshev(iirf, first,  2*CLAMP((int)stages,1,10), IIR_STAGE_LOWPASS,  ufc, 0.5f),
                                      chebyshev(iirf, second, 2*CLAMP((int)stages,1,10), IIR_STAGE_HIGHPASS, lfc, 0.5f));
                   iir_process_buffer_ns_5(iirf, gt, input, output, sample_count,RUN_ADDING);
+
+                  // Unused variable
+                  (void)(run_adding_gain);
                 </callback>
 
                 <callback event="activate">                  

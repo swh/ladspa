@@ -39,6 +39,14 @@
     
     <callback event="instantiate"><![CDATA[
       sample_rate = s_rate;
+
+      // Uninitialized variables
+      buffer_mask = 0;
+      delay_samples = 0;
+      feedback = 0;
+      last_decay_time = 0;
+      last_delay_time = 0;
+      write_phase = 0;
     ]]></callback>
     
     <callback event="activate"><![CDATA[
@@ -219,6 +227,14 @@
     
     <callback event="instantiate"><![CDATA[
       sample_rate = s_rate;
+
+      // Uninitialized variables
+      buffer_mask = 0;
+      delay_samples = 0;
+      feedback = 0;
+      last_decay_time = 0;
+      last_delay_time = 0;
+      write_phase = 0;
     ]]></callback>
     
     <callback event="activate"><![CDATA[
@@ -357,6 +373,14 @@
     
     <callback event="instantiate"><![CDATA[
       sample_rate = s_rate;
+
+      // Uninitialized variables
+      buffer_mask = 0;
+      delay_samples = 0;
+      feedback = 0;
+      last_decay_time = 0;
+      last_delay_time = 0;
+      write_phase = 0;
     ]]></callback>
     
     <callback event="activate"><![CDATA[

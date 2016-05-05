@@ -42,6 +42,14 @@
     
     <callback event="instantiate"><![CDATA[
       sample_rate = s_rate;
+
+      // Uninitialized variables
+      buffer_mask = 0;
+      delay_samples = 0;
+      feedback = 0;
+      last_decay_time = 0;
+      last_delay_time = 0;
+      write_phase = 0;
     ]]></callback>
     
     <callback event="activate"><![CDATA[
@@ -225,6 +233,14 @@
     
     <callback event="instantiate"><![CDATA[
       sample_rate = s_rate;
+
+      // Uninitialized variables
+      buffer_mask = 0;
+      delay_samples = 0;
+      feedback = 0;
+      last_decay_time = 0;
+      last_delay_time = 0;
+      write_phase = 0;
     ]]></callback>
     
     <callback event="activate"><![CDATA[
@@ -255,6 +271,8 @@
     
     <callback event="run"><![CDATA[
       int i;
+
+      ignore(max_delay);
 
       if (write_phase == 0) {
         plugin_data->last_delay_time = delay_time;
@@ -363,6 +381,14 @@
     
     <callback event="instantiate"><![CDATA[
       sample_rate = s_rate;
+
+      // Uninitialized variables
+      buffer_mask = 0;
+      delay_samples = 0;
+      feedback = 0;
+      last_decay_time = 0;
+      last_delay_time = 0;
+      write_phase = 0;
     ]]></callback>
     
     <callback event="activate"><![CDATA[
@@ -393,6 +419,8 @@
     
     <callback event="run"><![CDATA[
       int i;
+
+      ignore(max_delay);
 
       if (write_phase == 0) {
         plugin_data->last_delay_time = delay_time;
