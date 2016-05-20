@@ -213,28 +213,34 @@
 
     <port label="port_formant" dir="input" type="audio">
       <name>Formant-in</name>
+      <p>Signal to use as formant, such as a human voice.</p>
     </port>
 
     <port label="port_carrier" dir="input" type="audio">
       <name>Carrier-in</name>
+      <p>Signal to use as carrier. Use a saw wave, not a sine wave, as carrier should contain a broad wave spectrum, with several overtones.</p>
     </port>
 
     <port label="port_output" dir="output" type="audio">
       <name>Output-out</name>
+      <p>Left output.</p>
     </port>
 
     <port label="port_output2" dir="output" type="audio">
       <name>Output2-out</name>
+      <p>Right output.</p>
     </port>
 
     <port label="ctrl_band_count" dir="input" type="control" hint="integer">
       <name>Number of bands</name>
       <range min="1" max="MAX_BANDS"/>
+      <p>Number of frequency bands to divide the signals. Use as an equalizer.</p>
     </port>
 
     <port label="ctrl_pan" dir="input" type="control" hint="integer">
       <name>Left/Right</name>
       <range min="-100" max="+100"/>
+      <p>Pan between left and right outputs.</p>
     </port>
 
     <!-- Start band levels -->
