@@ -46,7 +46,7 @@ static float xcoeffs[] = {
 
   <plugin label="hilbert" id="1440" class="UtilityPlugin">
     <name>Hilbert transformer</name>
-    <p>A Hilbert Transformer phase shifts the input signal by 90degrees. It outputs the 90 degree phase shifted signal and the unshifted signal, both delayed by an equivlaent ammount</p>
+    <p>A Hilbert Transformer phase shifts the input signal by 90degrees. It outputs the 90 degree phase shifted signal and the unshifted signal, both delayed by an equivalent amount</p>
     <p>This plugin was written for a demo at the LAD Meet in 2003.</p>
 
     <callback event="instantiate"><![CDATA[
