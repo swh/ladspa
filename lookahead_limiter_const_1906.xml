@@ -19,7 +19,7 @@
   <plugin label="lookaheadLimiterConst" id="1906" class="LimiterPlugin">
     <name>Lookahead limiter (fixed latency)</name>
     <p>A lookahead limiter - similar to the original Lookahead Limiter, but
-with a constant latency of around 150ms and a reduacued maximum lookahead
+with a constant latency of around 150ms and a reduced maximum lookahead
 time.</p>
 
     <callback event="instantiate"><![CDATA[
