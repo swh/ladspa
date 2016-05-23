@@ -15,7 +15,7 @@
 
   <plugin label="lsFilter" id="1908" class="FilterPlugin">
     <name>LS Filter</name>
-    <p>This is a filter created for the LinkSampler project - its designed to closly follow the filter used in giga sampler.</p>
+    <p>This is a filter created for the LinkSampler project - its designed to closely follow the filter used in giga sampler.</p>
 
     <callback event="instantiate"><![CDATA[
       filt = malloc(sizeof(ls_filt));
@@ -51,13 +51,13 @@
     <port label="cutoff" dir="input" type="control" hint="default_middle, logarithmic, sample_rate">
       <name>Cutoff frequency (Hz)</name>
       <p>Controls the frequency at which the filter starts to effect the audio signal.</p>
-      <p>eg. a lowpass filter with a cutoff frequency of 1000 Hz will only let frequencies below 100 Hz through.</p>
+      <p>eg. a lowpass filter with a cutoff frequency of 1000 Hz will only let frequencies below 1000 Hz through.</p>
       <range min="0.002" max="0.5"/>
     </port>
 
     <port label="resonance" dir="input" type="control" hint="default_0">
       <name>Resonance</name>
-      <p>Creates a peak at the cutoff frequency, for the classic overdriven fileter sound. At high vlaues the peak at the cutoff will overwhelm the filtered signal.</p>
+      <p>Creates a peak at the cutoff frequency, for the classic overdriven filter sound. At high values the peak at the cutoff will overwhelm the filtered signal.</p>
       <range min="0.0" max="1.0"/>
     </port>
 
