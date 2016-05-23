@@ -17,10 +17,10 @@
 
   <plugin label="analogueOsc" id="1416" class="OscillatorPlugin">
     <name>Analogue Oscillator</name>
-    <p>This plugin simulates the output you get from an analogue synth's osciallators.</p>
-    <p>You can get a reasonable emualtion of a 303's square (for exmaple) if you set the warmth to about 0.4 and the instability to about 0.05.</p>
-    <p>The frequency is currently a control input, and there is no interpolation, so if your host is using large block sieze it will sound steppy.</p>
-    <p>I'm unsure whether to convert this to an audio input or inpolate the control in.</p>
+    <p>This plugin simulates the output you get from an analogue synth's oscillators.</p>
+    <p>You can get a reasonable emulation of a 303's square (for example) if you set the warmth to about 0.4 and the instability to about 0.05.</p>
+    <p>The frequency is currently a control input, and there is no interpolation, so if your host is using large block size it will sound steppy.</p>
+    <p>I'm unsure whether to convert this to an audio input or interpolate the control in.</p>
 
     <callback event="instantiate"><![CDATA[
       tables = blo_h_tables_new(512);
@@ -106,13 +106,13 @@
 
     <port label="warm" dir="input" type="control" hint="default_0">
       <name>Warmth</name>
-      <p>The degree of softening that is applied to the generted waveform, reduces the number of harmonics in the output.</p>
+      <p>The degree of softening that is applied to the generated waveform, reduces the number of harmonics in the output.</p>
       <range min="0" max="1"/>
     </port>
 
     <port label="instab" dir="input" type="control" hint="default_0">
       <name>Instability</name>
-      <p>The degree of pitch instability of the output. Turning this too high with square and saw waves will produce an anoying jittery sound, I want to fix this but it is tricky.</p>
+      <p>The degree of pitch instability of the output. Turning this too high with square and saw waves will produce an annoying jittery sound, I want to fix this but it is tricky.</p>
       <range min="0" max="1"/>
     </port>
 
