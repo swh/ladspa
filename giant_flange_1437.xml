@@ -24,10 +24,10 @@
 
   <plugin label="giantFlange" id="1437" class="FlangerPlugin">
     <name>Giant flange</name>
-    <p>This is a fairly normal flanger but with excessivly long delay times.
+    <p>This is a fairly normal flanger but with excessively long delay times.
 Requested by Patrick Shirkey.</p>
-    <p>To cut down the memory requirements the internal delay buffer noly has
-15bits or resolution, so there is no headroom, if you feed in signals over 0dB
+    <p>To cut down the memory requirements the internal delay buffer only has
+15bits of resolution, so there is no headroom, if you feed in signals over 0dB
 it will clip the output. There is code to soften the effect of the clipping,
 but beware of it.</p>
 
@@ -196,7 +196,7 @@ but beware of it.</p>
 
     <port label="wet" dir="input" type="control" hint="default_0">
       <name>Dry/Wet level</name>
-      <p>The ammounts of the input and effect mixed to produce the output.</p>
+      <p>The amounts of the input and effect mixed to produce the output.</p>
       <range min="0" max="1"/>
     </port>
 
