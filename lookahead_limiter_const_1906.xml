@@ -156,7 +156,7 @@ XXX FIXME XXX
 
     <port label="delay_s" dir="input" type="control" hint="default_middle">
       <name>Lookahead time (s)</name>
-      <p>The lookahead time used by the lookahead predictor. The longer the time the smoother the limiting will be, but will tend to make the changes in dynamic range more obvious.</p>
+      <p>The delay time used by the lookahead predictor. The longer the time the smoother the limiting will be, but will tend to make the changes in dynamic range more obvious.</p>
       <range min="0.001" max="0.15"/>
     </port>
 
