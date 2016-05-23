@@ -47,7 +47,7 @@
     <p>\subsubsection{What does it do?}</p>
     <p>Allows you to add harmonics and remove the fundamental from any audio signal.</p>
     <p>\subsubsection{Known bugs}</p>
-    <p>There is no bandwith limiting filter on the output, so it is easy to create excessively high frequency harmonics that could cause aliasing problems. In practive this doesn't seem to be a serious problem however.</p>
+    <p>There is no bandwith limiting filter on the output, so it is easy to create excessively high frequency harmonics that could cause aliasing problems. In practice this doesn't seem to be a serious problem however.</p>
     <p>\subsubsection{Examples}</p>
     <p>There are many interesting effects you can achieve with sinewaves, one example is producing bandlimited squarewaves from sinewaves. To do this set the parameters to 1, 0, -0.3333, 0, 0.2, 0, -0.14285, 0, 0.11111.</p>
     <p>To get a triangle like signal use 1, 0, -0.3333, 0, -0.2, 0, -0.14285, 0, -0.11111.</p>
@@ -107,14 +107,14 @@
 
     <port label="mag_2" dir="input" type="control" hint="default_0">
       <name>2nd harmonic magnitude</name>
-      <p>The 2nd harmonic, its frequency is twice the frequency of the harmonic.</p>
+      <p>The 2nd harmonic, its frequency is twice the frequency of the fundamental.</p>
       <p>Even harmonics add a distorted feel to the sound, valve (tube) amplifiers introduce distortions at all the harmonics.</p>
       <range min="-1" max="+1"/>
     </port>
 
     <port label="mag_3" dir="input" type="control" hint="default_0">
       <name>3rd harmonic magnitude</name>
-      <p>The 3rd harmonic, its frequency is three time the frequency of the fundamental.</p>
+      <p>The 3rd harmonic, its frequency is three times the frequency of the fundamental.</p>
       <p>Transistor amplifiers only introduce distortion into the odd harmonics.</p>
       <range min="-1" max="+1"/>
     </port>
