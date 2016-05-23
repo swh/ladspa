@@ -54,8 +54,8 @@
 signal envelope. As the level of the signal rises more and more harmonics will
 for added to the output signal.</p>
     <p>The distortion control sets the sensitivity of the input.</p>
-    <p>The effect eveolved from some experiments between Tim Goetze and myself,
-apptempting to emulate valve based guitar amp distortion. This was one of the
+    <p>The effect evolved from some experiments between Tim Goetze and myself,
+attempting to emulate valve based guitar amp distortion. This was one of the
 failures, but it still makes an interesting noise.</p>
 
     <callback event="instantiate"><![CDATA[
