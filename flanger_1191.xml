@@ -14,7 +14,7 @@
 
   <plugin label="flanger" id="1191" class="FlangerPlugin">
     <name>Flanger</name>
-    <p>A digital flanger implementation. Uses a novel zero excursion, controlled bandwidth modulation function, which should make the modulation less repetitive and noticable.</p>
+    <p>A digital flanger implementation. Uses a novel zero excursion, controlled bandwidth modulation function, which should make the modulation less repetitive and noticeable.</p>
     <p>This effect is similar in character to a phaser (see section \ref{lfoPhaser}). The main difference is that a phaser sounds more regular and stable.</p>
 
     <callback event="instantiate"><![CDATA[
