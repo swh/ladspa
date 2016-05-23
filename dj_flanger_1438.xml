@@ -17,7 +17,7 @@
 
   <plugin label="djFlanger" id="1438" class="FlangerPlugin">
     <name>DJ flanger</name>
-    <p>This is a flanger which is more or less typical of DJ mising desks. Requested by Patrick Shirkey.</p>
+    <p>This is a flanger which is more or less typical of DJ mixing desks. Requested by Patrick Shirkey.</p>
 
     <callback event="instantiate"><![CDATA[
       int buffer_size = 2048;
