@@ -50,8 +50,8 @@ static float xcoeffs[] = {
 
   <plugin label="bodeShifter" id="1431" class="SpectralPlugin">
     <name>Bode frequency shifter</name>
-    <p>A Bode/Moog Frequency Shifter is a popular analogue synth module, it works by shifting all the frequencies of an input signal up or down by a specified frequency. This version shifts in noth directions at the same time as its almost no extra work and its often useful to have both directions.</p>
-    <p>It doesn't actually work in the same way as an analogue Bode/Moog, which use Dome filters as the core, it uses a Hilbert Transformer, which is much simpler to implemtent in digital systems. The output is very similar though, and people are familiar with the name Bode.</p>
+    <p>A Bode/Moog Frequency Shifter is a popular analogue synth module, it works by shifting all the frequencies of an input signal up or down by a specified frequency. This version shifts in both directions at the same time as its almost no extra work and its often useful to have both directions.</p>
+    <p>It doesn't actually work in the same way as an analogue Bode/Moog, which use Dome filters as the core, it uses a Hilbert Transformer, which is much simpler to implement in digital systems. The output is very similar though, and people are familiar with the name Bode.</p>
     <p>The theory of operation is pretty simple, and uses some clever maths to cancel out the upper or lower sidebands of a ringmodulator applied to the input signal. Read the source if you want more information. The Hilbert Transformet coefficents came from mkfilter, the excellent filter calculator, available at \url{http://www-users.cs.york.ac.uk/~fisher/mkfilter/}.</p>
 
     <callback event="instantiate"><![CDATA[

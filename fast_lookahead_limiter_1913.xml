@@ -24,8 +24,8 @@
   <plugin label="fastLookaheadLimiter" id="1913" class="LimiterPlugin">
     <name>Fast Lookahead limiter</name>
     <p>This is a limiter with an attack time of 5ms. It adds just over 5ms of
-lantecy to the input signal, but it guatantees that there will be no signals
-over the limit, and tries to get the minimum ammount of distortion.</p>
+latency to the input signal, but it guarantees that there will be no signals
+over the limit, and tries to get the minimum amount of distortion.</p>
 
     <callback event="instantiate"><![CDATA[
       fs = s_rate;

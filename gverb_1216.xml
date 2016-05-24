@@ -33,15 +33,15 @@ Comments and suggestions should be mailed to Juhana Sadeharju
 
 	\begin{tabular}{|l|r|}
 	\hline
-	Parameter &amp; Value \\
+	Parameter & Value \\
 	\hline
-	Roomsize &amp; 200 \\
-	Reverb time &amp; 1.3 \\
-	Damping &amp; 0.4 \\
-	Input bandwidth &amp; 0.5 \\
-	Dry signal level &amp; 0 \\
-	Early reflection level &amp; -12 \\
-	Tail level &amp; 0 \\
+	Roomsize & 200 \\
+	Reverb time & 1.3 \\
+	Damping & 0.4 \\
+	Input bandwidth & 0.5 \\
+	Dry signal level & 0 \\
+	Early reflection level & -12 \\
+	Tail level & 0 \\
 	\hline
 	\end{tabular}
     ]]></p>

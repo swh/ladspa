@@ -194,7 +194,7 @@
 
     <port label="wet" dir="input" type="control" hint="default_0">
       <name>Dry/Wet level</name>
-      <p>The ammounts of the input and effect mixed to produce the output.</p>
+      <p>The amounts of the input and effect mixed to produce the output.</p>
       <range min="0" max="1"/>
     </port>
 

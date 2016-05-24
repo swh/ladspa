@@ -14,7 +14,7 @@
 
   <plugin label="gongBeater" id="1439" class="GeneratorPlugin">
     <name>Gong beater</name>
-    <p>A plugin to simulator the action of a beator on a gong surface, used to trigger the gong physical model.</p>
+    <p>A plugin to simulator the action of a beater on a gong surface, used to trigger the gong physical model.</p>
     <p>It is triggered by an impulse on the input, eg. from a mic or piezo placed near a solid surface, for an event sequencer.</p>
 
     <callback event="instantiate"><![CDATA[
@@ -80,13 +80,13 @@
 
     <port label="strike_gain" dir="input" type="control" hint="default_maximum">
       <name>Strike gain (dB)</name>
-      <p>The gain of the simulated pressure wave mixed into the output, bringing this up allows you to make the outputted strike more pure. The final output level is also proprtional to the amplitude of the trigger.</p>
+      <p>The gain of the simulated pressure wave mixed into the output, bringing this up allows you to make the outputted strike more pure. The final output level is also proportional to the amplitude of the trigger.</p>
       <range min="-70" max="0"/>
     </port>
 
     <port label="strike_duration" dir="input" type="control" hint="default_middle">
       <name>Strike duration (s)</name>
-      <p>The duration of the pressure wave used to simulate the action of the beater on the gong surface. The logner the duration the more sonorus the resulting gong sound.</p>
+      <p>The duration of the pressure wave used to simulate the action of the beater on the gong surface. The longer the duration the more sonorous the resulting gong sound.</p>
       <range min="0.001" max="0.2"/>
     </port>
 
