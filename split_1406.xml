@@ -10,7 +10,7 @@
 
 	<plugin label="split" id="1406" class="UtilityPlugin">
 		<name>Mono to Stereo splitter</name>
-		<p>Takes a mono input signal, and outputs it to both left and right channel, thus "stereophizing" it.</p>
+		<p>Takes a mono input signal, and outputs it to both left and right channel, thus \"stereophizing" it.</p>
 
 		<callback event="run">
 			unsigned long pos;
