@@ -115,7 +115,7 @@
 
     <port label="rms_peak" dir="input" type="control" hint="default_minimum">
       <name>RMS/peak</name>
-      <p>The blanace between the RMS and peak envelope followers.</p>
+      <p>The balance between the RMS and peak envelope followers.</p>
       <p>RMS is generally better for subtle, musical compression and peak is better for heavier, fast compression and percussion.</p>
       <range min="0" max="1"/>
     </port>
