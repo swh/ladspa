@@ -88,7 +88,7 @@ static inline float run_svf(sv_filter *sv, float in) {
 
 	<plugin label="svf" id="1214" class="FilterPlugin">
 		<name>State Variable Filter</name>
-		<p>An oversampled state variable filter with a few tweaks</p>
+		<p>An oversampled state variable filter with a few tweaks.</p>
 		<p>Quite a nice State Variable Filter, tends to be unstable with high resonance and Q values, but good when kept under control.</p>
 		<callback event="instantiate">
 sample_rate = s_rate;
