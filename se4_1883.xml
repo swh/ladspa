@@ -113,7 +113,7 @@
 
     <port label="rms_peak" dir="input" type="control" hint="default_minimum">
       <name>RMS/peak</name>
-      <p>The blanace between the RMS and peak envelope followers.</p>
+      <p>The balance between the RMS and peak envelope followers.</p>
       <range min="0" max="1"/>
     </port>
 
