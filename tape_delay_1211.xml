@@ -14,7 +14,7 @@
 
 	<plugin label="tapeDelay" id="1211" class="DelayPlugin,SimulatorPlugin">
 		<name>Tape Delay Simulation</name>
-                <p>Correctly models the tape motion and some of the smear effect, there is no simulation fo the head saturation yet, as I don't have a good model of it. When I get one I will add it.</p>
+                <p>Correctly models the tape motion and some of the smear effect, there is no simulation for the head saturation yet, as I don't have a good model of it. When I get one I will add it.</p>
                 <p>The way the tape accelerates and decelerates gives a nicer delay effect for many purposes.</p>
 
 		<callback event="instantiate"><![CDATA[
