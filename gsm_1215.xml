@@ -132,7 +132,7 @@
       <name>Error rate (bits/block)</name>
       <range min="0" max="30"/>
       <p>The number of simulated bits that get changed during the transmission process.</p>
-      <p>I really wanted to reduce the bandwidth to get that {}"shouting down a drainpipe{}" effect, but I'm not sure how the reduced bandwidth is dealt with by real phones. I suspect it's heavily patented technology.</p>
+      <p>I really wanted to reduce the bandwidth to get that "shouting down a drainpipe" effect, but I'm not sure how the reduced bandwidth is dealt with by real phones. I suspect it's heavily patented technology.</p>
     </port>
 
     <port label="input" dir="input" type="audio">
