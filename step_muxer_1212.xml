@@ -16,7 +16,7 @@
 
   <plugin label="stepMuxer" id="1212" class="UtilityPlugin">
     <name>Step Demuxer</name>
-    <p>Inputs up to 8 signals and switches between them on the output when then signal on the clock input goes high.</p>
+    <p>Inputs up to 8 signals and switches between them on the output when the signal on the clock input goes high.</p>
     <p>This plugin is untested, and may not work.</p>
 
     <callback event="instantiate"><![CDATA[

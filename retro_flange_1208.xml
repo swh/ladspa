@@ -26,7 +26,7 @@ inline LADSPA_Data sat(LADSPA_Data x, float q,  float dist) {
 	<plugin label="retroFlange" id="1208" class="FlangerPlugin">
 		<name>Retro Flanger</name>
 		<p>A model of someone flanging the input.</p>
-		<p>Models the tape saturation effects, and frequency smear of a manual flanger. The results are a slightly distorted, but more subtle flanger sound that you get from a normal digial flanger.</p>
+		<p>Models the tape saturation effects, and frequency smear of a manual flanger. The results are a slightly distorted, but more subtle flanger sound that you get from a normal digital flanger.</p>
 
 		<callback event="instantiate"><![CDATA[
 sample_rate = s_rate;

@@ -53,10 +53,10 @@ static float xcoeffs[] = {
     <p>This is not a proper implementation of Pro-logic, there is no Dolby B processing done on the surround channel, which would help, but would be using Dolby intellectual property.</p>
     <p>\subsubsection{Caveats}</p>
     <p>Obviously you can't wedge four channels into two without loss, so something has to give. You will probably notice significant cross-talk between the channels, but the decoder should do cross-talk correction, which will help a lot. A side effect of this is that it will make left-right panning unusual, the sources will dwell near the left and right speakers and zip across the centre channel. Because of this it is only really possible to master surround recordings through a pre-logic decoder. Do not attempt to use a conventional 5 point surround multichannel setup, it behaves very differently.</p>
-    <p>In addition to this, output from this process is not entirly mono compatible, in mono output the L, C and R will be preserved as per a stereo recording (centre will be mixed equally), but the surround channel will be totally lost.</p>
+    <p>In addition to this, output from this process is not entirely mono compatible, in mono output the L, C and R will be preserved as per a stereo recording (centre will be mixed equally), but the surround channel will be totally lost.</p>
     <p>Careful gain control on the output is required, as the level of the output will be greater than the L and R inputs, but different to the sum amplitude of the input signals.</p>
     <p>Widely panned reverb fed to the L and R channels will often leak into the S channel, if this is not desired (often it is) reduce the width of the stereo image.</p>
-    <p>The encoding will survive some processes (eg. copying to CD, MD etc.), but may not survive conversion to MP3 or recoding to tape with azimuth errors.</p>
+    <p>The encoding will survive some processes (eg. copying to CD, MD etc.), but may not survive conversion to MP3 or recording to tape with azimuth errors.</p>
     <p>\subsubsection{Legalese}</p>
     <p>This is a four channel matrix encoder, it happens to be compatible with Dolby Surround Pro-Logic.</p>
     <p>This implementation does not convey a license nor imply a right under any patent, or any other industrial or intellectual property right of Dolby Laboratories.</p>

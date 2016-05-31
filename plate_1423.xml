@@ -93,7 +93,7 @@
 
     <port label="time" dir="input" type="control" hint="default_middle">
       <name>Reverb time</name>
-      <p>Controls the RT60 time of the reverb. Actually controls the size of the plate. The mapping betwwen plate size and RT60 time is just a heuristic, so it's not very accurate.</p>
+      <p>Controls the RT60 time of the reverb. Actually controls the size of the plate. The mapping between plate size and RT60 time is just a heuristic, so it's not very accurate.</p>
       <range min="0.01" max="8.5"/>
     </port>
 

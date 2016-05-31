@@ -22,7 +22,7 @@
 
   <plugin label="pointerCastDistortion" id="1910" class="DistortionPlugin">
     <name>Pointer cast distortion</name>
-    <p>This distortion is created by treating the floating point repesentation
+    <p>This distortion is created by treating the floating point representation
 of the input signal as a 0.32 1's complement fixedpoint integer. Its very
 unmusical but supprisingly recognisable. I'm not sure that its useful for
 anything, but it can make interesting noises.</p>
@@ -67,7 +67,7 @@ anything, but it can make interesting noises.</p>
 
     <port label="wet" dir="input" type="control" hint="default_0">
       <name>Dry/wet mix</name>
-      <p>Controls the ammount of distioning mixed into the output.</p>
+      <p>Controls the ammunt of distorting mixed into the output.</p>
       <range min="0" max="1"/>
     </port>
 

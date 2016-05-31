@@ -211,7 +211,7 @@
 
     <port label="wear" dir="input" type="control" hint="default_0">
       <name>Wear</name>
-      <p>The ammount of wear on the grooves.</p>
+      <p>The amount of wear on the grooves.</p>
       <range min="0.0" max="1.0"/>
     </port>
 

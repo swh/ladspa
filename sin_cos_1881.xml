@@ -51,7 +51,7 @@
 
     <port label="pitch" dir="input" type="control" hint="default_0">
       <name>Pitch offset</name>
-      <p>The pitch offset of the output waves. Final oscillator frequency is $base + 2^pitch$.</p>
+      <p>The pitch offset of the output waves. Final oscillator frequency is $base + 2\^pitch$.</p>
      <range min="0" max="8"/>
     </port>
 
