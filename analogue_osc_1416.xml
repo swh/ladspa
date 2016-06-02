@@ -62,7 +62,7 @@
 	y = (x - q) / (1.0f - f_exp(-1.2f * (x - q))) +
               q / (1.0f - f_exp(1.2f * q));
 	/* Catch the case where x ~= q */
-	if (fabs(y) > 1.0f) {
+	if (isnan(y) || fabs(y) > 1.0f) {
 		y = 0.83333f + q / (1.0f - f_exp(1.2f * q));
 	}
 	otm2 = otm1;
