@@ -100,15 +100,9 @@ CFLAGS="$lrintf_save_CFLAGS -I@top_srcdir@/intl -I@top_srcdir@"
 if [ echo ${CFLAGS} | grep "\-march=" ]; then
   AC_MSG_WARN([CFLAGS appears to allready contain architecture specifaction, using exiting one])
 else
-  AC_MSG_WARN([Can't fine architecture specifaction in CFLAGS, picking one from build host CPU type])
-  AC_MSG_WARN([May result in non-portable code])
-  dnl For gcc use:
-  MACHINE="-march=${build_cpu}"
-  if test ${build_cpu} = "powerpc"; then MACHINE=""; fi
-  if test ${build_cpu} = "powerpc64"; then MACHINE=""; fi
-  if test ${build_cpu} = "x86_64"; then MACHINE=""; fi
+  AC_MSG_WARN([Can't find architecture specifaction in CFLAGS])
 
-  CFLAGS="$CFLAGS -Wall -O3 -fomit-frame-pointer -fstrength-reduce -funroll-loops -ffast-math -fPIC -DPIC ${MACHINE} ${USE_SSE} ${DARWIN_CFLAGS}"
+  CFLAGS="$CFLAGS -Wall -O3 -fomit-frame-pointer -fstrength-reduce -funroll-loops -ffast-math -fPIC -DPIC ${USE_SSE} ${DARWIN_CFLAGS}"
 
   dnl For Intel's C compiler use:
   dnl CC="icc"
