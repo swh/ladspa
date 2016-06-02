@@ -206,7 +206,7 @@ msgid "Debug Plugin"
 msgstr ""
 
 #: debug_1184.xml:93
-msgid "Diplay all values?"
+msgid "Display all values?"
 msgstr ""
 
 #: debug_1184.xml:103
