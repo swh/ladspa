@@ -3,7 +3,7 @@ EXTRA_DIST = lxml2rdf.pl txt2scale.pl scale-points.txt $(pkgdata_DATA)
 pkgdatadir = $(datadir)/ladspa/rdf
 
 swh-plugins.rdf: @top_srcdir@/*.xml
-	./lxml2rdf.pl @top_srcdir@/*.xml > swh-plugins.rdf
+	./lxml2rdf.pl $(sort $^) > $@
 	xmllint -noout swh-plugins.rdf
 
 swh-scales.rdf: scale-points.txt
