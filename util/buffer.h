@@ -6,12 +6,10 @@
  * this could be sped up by vector operations
  */
 
-static inline void buffer_sub(const float* a, const float *b, const float *c, int cnt) {
+static inline void buffer_sub(const float* a, const float *b, float *c, int cnt) {
 	int i;
-	float *h;
-	h = c;
 	for(i=0;i<cnt;++i)
-		*h++ = *a++ - *b++;
+		*c++ = *a++ - *b++;
 }
 
 #endif
