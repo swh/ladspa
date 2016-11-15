@@ -1,4 +1,4 @@
-AC_INIT([swh-plugins], [0.4.15])
+AC_INIT([swh-plugins], [0.4.17])
 AC_CONFIG_SRCDIR([amp_1181.xml])
 AC_CANONICAL_SYSTEM
 AC_CONFIG_MACRO_DIRS([m4])
