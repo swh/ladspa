@@ -89,8 +89,7 @@
 			offset = 0;
 		</callback>
 
-		<callback event="cleanup">
-			plugin_data = plugin_data;
+		<callback event="cleanup" unused-vars="plugin_data">
 			if (--refcount == 0) {
 				free(sin_tbl);
 				free(tri_tbl);

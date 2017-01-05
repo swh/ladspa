@@ -42,7 +42,6 @@ fast_track = 0.1;
 medi_track = 0.1;
 slow_track = 0.1;
 count = 0;
-sample_rate = sample_rate;
     </callback>
 
     <callback event="cleanup"><![CDATA[

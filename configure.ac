@@ -97,12 +97,24 @@ AC_ARG_ENABLE(darwin, [  --enable-darwin Builds plugins that will be shared obje
 
 CFLAGS="$lrintf_save_CFLAGS -I@top_srcdir@/intl -I@top_srcdir@"
 
+check_cc_flag() {
+  echo "int main(void){return 0;}" | $CC $CFLAGS $1 -o /dev/null -x c - 2> /dev/null
+}
+
 if [ echo ${CFLAGS} | grep "\-march=" ]; then
   AC_MSG_WARN([CFLAGS appears to allready contain architecture specifaction, using exiting one])
 else
   AC_MSG_WARN([Can't find architecture specifaction in CFLAGS])
 
-  CFLAGS="$CFLAGS -Wall -O3 -fomit-frame-pointer -fstrength-reduce -funroll-loops -ffast-math -fPIC -DPIC ${USE_SSE} ${DARWIN_CFLAGS}"
+  CFLAGS="$CFLAGS -Wall -O3 -fomit-frame-pointer -funroll-loops -ffast-math -fPIC -DPIC ${USE_SSE} ${DARWIN_CFLAGS}"
+
+  printf %s "checking if $CC supports -fstrength-reduce... "
+  if check_cc_flag -fstrength-reduce; then
+    echo yes
+    CFLAGS="$CFLAGS -fstrength-reduce"
+  else
+    echo no
+  fi
 
   dnl For Intel's C compiler use:
   dnl CC="icc"

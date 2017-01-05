@@ -86,7 +86,7 @@ for (pos = 0; pos < sample_count; pos++) {
 
 	// Calculate position in delay table
 	d_base = LIN_INTERP(frac, old_d_base, new_d_base);
-	n_ph = (float)(law_p - abs(next_law_pos - count))/(float)law_p;
+	n_ph = (float)(law_p - labs(next_law_pos - count))/(float)law_p;
 	p_ph = n_ph + 0.5f;
 	while (p_ph > 1.0f) {
 		p_ph -= 1.0f;

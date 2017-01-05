@@ -1,5 +1,6 @@
 #!/usr/bin/perl -w
 
+use List::Util qw(any);
 use XML::Parser;
 
 $xml_line = 1;
@@ -205,6 +206,7 @@ sub process_plugin {
 		if ($foo eq "callback") {
 			push(@callbacks, $tree->[$i+1]->[0]->{'event'});
 			$callback_code{$label.'_'.$tree->[$i+1]->[0]->{'event'}} = $tree->[$i+1]->[2];
+			$callback_unused_vars{$label.'_'.$tree->[$i+1]->[0]->{'event'}} = $tree->[$i+1]->[0]->{'unused-vars'};
 		}
 		if ($foo eq "port") {
 			push(@ports, &process_port($tree->[$i+1]));
@@ -326,7 +328,11 @@ EOB
 
 		if ($call eq "cleanup") {
 			if ($callback_code{"${label}_cleanup"}) {
-				$c = $cc_marker."\t\u$label *plugin_data = (\u$label *)instance;\n";
+				@unused_vars = split(/[ ,]+/, $callback_unused_vars{"${label}_cleanup"});
+				$c = $cc_marker;
+				unless (any { $_ eq 'plugin_data' } @unused_vars) {
+					$c .= "\t\u$label *plugin_data = (\u$label *)instance;\n";
+				}
 				$c .= reindent_callback($callback_code{"${label}_cleanup"})."\n";
 			} else {
 				$c = "";
@@ -355,8 +361,11 @@ EOB
 					$run_code .= "	const LADSPA_Data ".$port->{'label'}." = *(plugin_data->".$port->{'label'}.");\n";
 				}
 			}
+			@unused_vars = split(/[ ,]+/, $callback_unused_vars{"${label}_run"});
 			for $var (sort keys %i_data) {
-				$run_code .= "	$i_data{$var} $var = plugin_data->$var;\n";
+				unless (any { $_ eq $var } @unused_vars) {
+					$run_code .= "	$i_data{$var} $var = plugin_data->$var;\n";
+				}
 			}
 			if ($callback_code{"${label}_run"}) {
 				$cb_code = $callback_code{"${label}_run"};

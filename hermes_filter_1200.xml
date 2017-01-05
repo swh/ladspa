@@ -227,7 +227,7 @@ blo_h_free(plugin_data->lfo2_d);
 blo_h_tables_free(plugin_data->tables);
 		</callback>
 
-		<callback event="run"><![CDATA[
+		<callback event="run" unused-vars="tables"><![CDATA[
 unsigned long pos;
 int i;
 
@@ -332,8 +332,6 @@ dela_wet[2] = dela3_wet;
 dela_fb[0] = dela1_fb;
 dela_fb[1] = dela2_fb;
 dela_fb[2] = dela3_fb;
-
-tables = tables; // To shut up gcc
 
 for (pos = 0; pos < sample_count; pos++) {
 	count++; // Count of number of samples processed

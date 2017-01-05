@@ -21,11 +21,9 @@
       osc = blo_h_new(tables, BLO_SINE, (float)s_rate);
     ]]></callback>
 
-    <callback event="run"><![CDATA[
+    <callback event="run" unused-vars="tables"><![CDATA[
       unsigned long pos;
       osc->wave = LIMIT(f_round(wave) - 1, 0, BLO_N_WAVES-1);
-
-      tables = tables; // So gcc doesn't think it's unused
 
       for (pos = 0; pos < sample_count; pos++) {
 	blo_hd_set_freq(osc, fm[pos]);
