@@ -57,15 +57,13 @@
       }
     ]]></callback>
 
-    <callback event="run"><![CDATA[
+    <callback event="run" unused-vars="fs"><![CDATA[
       unsigned long pos;
       gsm_frame frame;
       int samp;
       float part;
       int error_rate = f_round(error);
       int num_passes = f_round(passes);
-
-      fs = fs; // So gcc doesn't think it's unused
 
       for (pos = 0; pos < sample_count; pos++) {
 

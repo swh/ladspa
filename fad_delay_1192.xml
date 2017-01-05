@@ -40,7 +40,6 @@
 			phase = 0;
 			last_phase = 0;
 			last_in = 0.0f;
-			sample_rate = sample_rate;
 		</callback>
 
 		<callback event="cleanup">
