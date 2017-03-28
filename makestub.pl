@@ -206,7 +206,7 @@ sub process_plugin {
 		if ($foo eq "callback") {
 			push(@callbacks, $tree->[$i+1]->[0]->{'event'});
 			$callback_code{$label.'_'.$tree->[$i+1]->[0]->{'event'}} = $tree->[$i+1]->[2];
-			$callback_unused_vars{$label.'_'.$tree->[$i+1]->[0]->{'event'}} = $tree->[$i+1]->[0]->{'unused-vars'};
+			$callback_unused_vars{$label.'_'.$tree->[$i+1]->[0]->{'event'}} = $tree->[$i+1]->[0]->{'unused-vars'} // "";
 		}
 		if ($foo eq "port") {
 			push(@ports, &process_port($tree->[$i+1]));

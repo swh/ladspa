@@ -9,6 +9,7 @@
     <code><![CDATA[
       #include <ladspa-util.h>
 
+      #define MIN(a,b) ((a) < (b) ? (a) : (b))
       #define N_TAPS 128
 
       typedef struct {
@@ -146,7 +147,7 @@
         for (i=0; i<ntaps; i++) {
 	  g_rand = (1.0f-gain_rand) + (float)rand() / (float)RAND_MAX * 2.0f * gain_rand;
 	  d_rand = (1.0f-delay_rand) + (float)rand() / (float)RAND_MAX * 2.0f * delay_rand;
-          taps[next_set][i].delay = LIMIT((unsigned int)(delay_base + delay_sum * delay_fix * d_rand), 0, buffer_size-1);
+          taps[next_set][i].delay = MIN((unsigned int)(delay_base + delay_sum * delay_fix * d_rand), buffer_size-1);
           taps[next_set][i].gain = gain * g_rand;
 
           delay_sum += delay;
