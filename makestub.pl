@@ -68,7 +68,7 @@ for (my $i=7; $i<@{$ladspa}; $i+=4) {
 print <<EOB;
 \#include <stdlib.h>
 \#include <string.h>
-\#ifndef WIN32
+\#ifndef _WIN32
 \#include "config.h"
 \#endif
 
@@ -85,7 +85,7 @@ print <<EOB;
 
 \#include "ladspa.h"
 
-\#ifdef WIN32
+\#ifdef _WIN32
 \#define _WINDOWS_DLL_EXPORT_ __declspec(dllexport)
 int bIsFirstTime = 1; 
 static void __attribute__((constructor)) swh_init(); // forward declaration
@@ -123,7 +123,7 @@ print <<EOB;
 _WINDOWS_DLL_EXPORT_
 const LADSPA_Descriptor *ladspa_descriptor(unsigned long index) {
 
-\#ifdef WIN32
+\#ifdef _WIN32
 	if (bIsFirstTime) {
 		swh_init();
 		bIsFirstTime = 0;
