@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-use List::Util qw(any);
+use List::MoreUtils qw(any);
 use XML::Parser;
 
 $xml_line = 1;
