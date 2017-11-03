@@ -1,0 +1,15 @@
+language: c
+compiler: gcc
+dist: trusty
+sudo: required
+matrix:
+    include:
+        - os: linux
+install:
+    - sudo apt-get install automake autopoint libxml2-utils perl libxml-perl liblist-moreutils-perl fftw3-dev
+script:
+    - autoreconf -i
+    - ./configure
+    - make
+    - make install prefix=$HOME/dist
+    - cd $HOME/dist/lib/ladspa/ && echo -e "Found $(ls *.so |wc -l) files\n-------" && ls *.so
