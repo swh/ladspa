@@ -181,11 +181,11 @@ msgstr "Feedback"
 msgid "Comb Splitter"
 msgstr "Kammspalter"
 
-#: comb_splitter_1411.xml:133 lookahead_limiter_1435.xml:200 split_1406.xml:82
+#: comb_splitter_1411.xml:133 split_1406.xml:82
 msgid "Output 1"
 msgstr "Ausgang 1"
 
-#: comb_splitter_1411.xml:140 lookahead_limiter_1435.xml:207 split_1406.xml:92
+#: comb_splitter_1411.xml:140 split_1406.xml:92
 msgid "Output 2"
 msgstr "Ausgang 2"
 
@@ -1013,27 +1013,11 @@ msgstr "L-Ausgang"
 msgid "R output"
 msgstr "R-Ausgang"
 
-#: lookahead_limiter_1435.xml:131
-msgid "Lookahead limiter"
-msgstr "Vorgriff-Begrenzer"
-
-#: lookahead_limiter_1435.xml:156
-msgid "Limit (dB)"
-msgstr "Begrenzung (dB)"
-
-#: lookahead_limiter_1435.xml:166
-msgid "Lookahead delay"
-msgstr "Vorgriff-Verzögerung"
-
-#: lookahead_limiter_1435.xml:176
-msgid "Attenuation (dB)"
-msgstr "Dämpfung (dB)"
-
-#: lookahead_limiter_1435.xml:186 step_muxer_1212.xml:166
+#: step_muxer_1212.xml:166
 msgid "Input 1"
 msgstr "Eingang 1"
 
-#: lookahead_limiter_1435.xml:193 step_muxer_1212.xml:173
+#: step_muxer_1212.xml:173
 msgid "Input 2"
 msgstr "Eingang 2"
 

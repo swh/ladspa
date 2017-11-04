@@ -2629,68 +2629,6 @@
     </ladspa:hasSetting>
   </ladspa:DelayPlugin>
 
-  <ladspa:LimiterPlugin rdf:about="&ladspa;1435">
-    <dc:creator>Steve Harris &lt;steve@plugin.org.uk&gt;</dc:creator>
-    <dc:title>Lookahead limiter</dc:title>
-    <ladspa:hasPort>
-      <ladspa:InputControlPort rdf:about="&ladspa;1435.1" ladspa:hasLabel="limit" />
-    </ladspa:hasPort>
-    <ladspa:hasPort>
-      <ladspa:InputControlPort rdf:about="&ladspa;1435.2" ladspa:hasLabel="delay_s" />
-    </ladspa:hasPort>
-    <ladspa:hasPort>
-      <ladspa:OutputControlPort rdf:about="&ladspa;1435.3" ladspa:hasLabel="attenuation" />
-    </ladspa:hasPort>
-    <ladspa:hasPort>
-      <ladspa:OutputControlPort rdf:about="&ladspa;1435.8" ladspa:hasLabel="latency" />
-    </ladspa:hasPort>
-    <ladspa:hasSetting>
-      <ladspa:Default>
-        <ladspa:hasPortValue>
-          <ladspa:PortValue rdf:value="0">
-            <ladspa:forPort rdf:resource="&ladspa;1435.1" />
-          </ladspa:PortValue>
-        </ladspa:hasPortValue>
-        <ladspa:hasPortValue>
-          <ladspa:PortValue rdf:value="1.0005">
-            <ladspa:forPort rdf:resource="&ladspa;1435.2" />
-          </ladspa:PortValue>
-        </ladspa:hasPortValue>
-      </ladspa:Default>
-    </ladspa:hasSetting>
-  </ladspa:LimiterPlugin>
-
-  <ladspa:LimiterPlugin rdf:about="&ladspa;1906">
-    <dc:creator>Steve Harris &lt;steve@plugin.org.uk&gt;</dc:creator>
-    <dc:title>Lookahead limiter (fixed latency)</dc:title>
-    <ladspa:hasPort>
-      <ladspa:InputControlPort rdf:about="&ladspa;1906.1" ladspa:hasLabel="limit" />
-    </ladspa:hasPort>
-    <ladspa:hasPort>
-      <ladspa:InputControlPort rdf:about="&ladspa;1906.2" ladspa:hasLabel="delay_s" />
-    </ladspa:hasPort>
-    <ladspa:hasPort>
-      <ladspa:OutputControlPort rdf:about="&ladspa;1906.3" ladspa:hasLabel="attenuation" />
-    </ladspa:hasPort>
-    <ladspa:hasPort>
-      <ladspa:OutputControlPort rdf:about="&ladspa;1906.8" ladspa:hasLabel="latency" />
-    </ladspa:hasPort>
-    <ladspa:hasSetting>
-      <ladspa:Default>
-        <ladspa:hasPortValue>
-          <ladspa:PortValue rdf:value="0">
-            <ladspa:forPort rdf:resource="&ladspa;1906.1" />
-          </ladspa:PortValue>
-        </ladspa:hasPortValue>
-        <ladspa:hasPortValue>
-          <ladspa:PortValue rdf:value="0.0755">
-            <ladspa:forPort rdf:resource="&ladspa;1906.2" />
-          </ladspa:PortValue>
-        </ladspa:hasPortValue>
-      </ladspa:Default>
-    </ladspa:hasSetting>
-  </ladspa:LimiterPlugin>
-
   <ladspa:LowpassPlugin rdf:about="&ladspa;1891">
     <dc:creator>Alexander Ehlert &lt;mag@glame.de&gt;</dc:creator>
     <dc:title>Glame Lowpass Filter</dc:title>
