@@ -326,7 +326,7 @@
     <port label="release_time" dir="input" type="control" hint="default_low">
       <name>Release time (s)</name>
       <p>Controls the time taken for the compressor to relax its gain control over the input signal.</p>
-      <range min="0" max="1"/>
+      <range min="0.0000001" max="1"/>
     </port>
 
     <port label="cfrate" dir="input" type="control" hint="default_middle">
