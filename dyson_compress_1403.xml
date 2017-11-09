@@ -142,7 +142,7 @@
     <callback event="run"><![CDATA[
       unsigned long pos;
       float targetlevel = MAXLEVEL * DB_CO(peak_limit);
-      float rgainfilter = 1.0f / (release_time * sample_rate);
+      float rgainfilter = 1.0f / fmaxf(release_time, 0.0000001f) * sample_rate;
       float fastgaincompressionratio = cfrate;
       float compressionratio = crate;
       float efilt;
@@ -326,7 +326,7 @@
     <port label="release_time" dir="input" type="control" hint="default_low">
       <name>Release time (s)</name>
       <p>Controls the time taken for the compressor to relax its gain control over the input signal.</p>
-      <range min="0.0000001" max="1"/>
+      <range min="0" max="1"/>
     </port>
 
     <port label="cfrate" dir="input" type="control" hint="default_middle">
