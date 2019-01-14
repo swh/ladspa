@@ -87,8 +87,12 @@ print <<EOB;
 
 \#ifdef _WIN32
 \#define _WINDOWS_DLL_EXPORT_ __declspec(dllexport)
-int bIsFirstTime = 1; 
+int bIsFirstTime = 1;
+#ifdef _MSC_VER
+static void swh_init(); // forward declaration
+#else
 static void __attribute__((constructor)) swh_init(); // forward declaration
+#endif
 \#else
 \#define _WINDOWS_DLL_EXPORT_ 
 \#endif
@@ -140,7 +144,11 @@ print "	default:\n		return NULL;\n	}\n}\n\n";
 print $code;
 # Headers for init section
 print <<EOB;
+#ifdef _MSC_VER
+static void swh_init() {
+#else
 static void __attribute__((constructor)) swh_init() {
+#endif
 	char **port_names;
 	LADSPA_PortDescriptor *port_descriptors;
 	LADSPA_PortRangeHint *port_range_hints;
@@ -157,10 +165,32 @@ print $init_code;
 print "}\n";
 
 print <<EOB;
-
+#ifdef _MSC_VER
+static void swh_fini() {
+#else
 static void __attribute__((destructor)) swh_fini() {
+#endif
 $fini_code
 }
+
+#ifdef _MSC_VER
+#include <windows.h>
+BOOL APIENTRY DllMain(HMODULE hModule,
+	DWORD  ul_reason_for_call,
+	LPVOID lpReserved)
+{
+	switch (ul_reason_for_call)
+	{
+	case DLL_PROCESS_ATTACH:
+		swh_init();
+		break;
+	case DLL_PROCESS_DETACH:
+		swh_fini();
+		break;
+	}
+	return TRUE;
+}
+#endif
 EOB
 
 sub process_plugin {
