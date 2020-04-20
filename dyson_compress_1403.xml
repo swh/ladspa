@@ -142,7 +142,7 @@
     <callback event="run"><![CDATA[
       unsigned long pos;
       float targetlevel = MAXLEVEL * DB_CO(peak_limit);
-      float rgainfilter = 1.0f / (release_time * sample_rate);
+      float rgainfilter = 1.0f / (fmaxf(release_time, 0.0000001f) * sample_rate);
       float fastgaincompressionratio = cfrate;
       float compressionratio = crate;
       float efilt;
