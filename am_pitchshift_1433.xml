@@ -39,76 +39,93 @@
       free(plugin_data->delay);
     ]]></callback>
 
-    <callback event="run"><![CDATA[
-      unsigned long pos;
-      fixp16 om;
-      float gain = last_gain, gain_inc = last_inc;
-      unsigned int i;
+	<callback event="run"><![CDATA[
+    
+    	unsigned long pos;
+    	
+		if (enabled == 0)
+		{
+			//Send input direct to output (no processing)
+            for (pos = 0; pos < sample_count; pos++)
+            	buffer_write(output[pos], input[pos]); 
+		}
+		else
+		{
+    	    fixp16 om;
+	        float gain = last_gain, gain_inc = last_inc;
+          	unsigned int i;
 
-      om.all = f_round(pitch * 65536.0f);
+          	om.all = f_round(pitch * 65536.0f);
 
-      if (size != last_size) {
-	int size_tmp = f_round(size);
+			if (size != last_size) {
+    			int size_tmp = f_round(size);
 
-	if (size_tmp > 7) {
-	  size_tmp = 5;
-	} else if (size_tmp < 1) {
-	  size_tmp = 1;
-	}
-	plugin_data->last_size = size;
+        		if (size_tmp > 7) {
+        	  		size_tmp = 5;
+        		} else if (size_tmp < 1) {
+        	  		size_tmp = 1;
+        		}
+        		plugin_data->last_size = size;
 
-	/* Calculate the ringbuf parameters, the magick constants will need
-	 * to be changed if you change DELAY_SIZE */
-	delay_mask = (1 << (size_tmp + 6)) - 1;
-	delay_ofs = 1 << (size_tmp + 5);
-      }
+        		/* Calculate the ringbuf parameters, the magick constants will need
+        	 	* to be changed if you change DELAY_SIZE */
+        		delay_mask = (1 << (size_tmp + 6)) - 1;
+        		delay_ofs = 1 << (size_tmp + 5);
+          	}
 
-      for (pos = 0; pos < sample_count; pos++) {
-	float out = 0.0f;
+		  for (pos = 0; pos < sample_count; pos++) {
+			  float out = 0.0f;
 
-	if (count++ > 14) {
-	  float tmp;
-	  count = 0;
-	  tmp = 0.5f * (float)((rptr.part.in - wptr + delay_ofs/2) &
-                delay_mask) / (float)delay_ofs;
-	  tmp = sinf(M_PI * 2.0f * tmp) * 0.5f + 0.5f;
-	  gain_inc = (tmp - gain) / 15.0f;
-	}
-	gain += gain_inc;
+			  if (count++ > 14) {
+				  float tmp;
+				  count = 0;
+				  tmp = 0.5f * (float)((rptr.part.in - wptr + delay_ofs/2) &
+					  delay_mask) / (float)delay_ofs;
+				  tmp = sinf(M_PI * 2.0f * tmp) * 0.5f + 0.5f;
+				  gain_inc = (tmp - gain) / 15.0f;
+			  }
+			  gain += gain_inc;
 
-	delay[wptr] = input[pos];
+			  delay[wptr] = input[pos];
 
-	/* Add contributions from the two readpointers, scaled by thier
-         * distance from the write pointer */
-	i = rptr.part.in;
-	out += cube_interp((float)rptr.part.fr * 0.0000152587f,
-                           delay[(i - 1) & delay_mask], delay[i],
-                           delay[(i + 1) & delay_mask],
-                           delay[(i + 2) & delay_mask]) * (1.0f - gain);
-	i += delay_ofs;
-	out += cube_interp((float)rptr.part.fr * 0.0000152587f,
-                           delay[(i - 1) & delay_mask], delay[i & delay_mask],
-                           delay[(i + 1) & delay_mask],
-                           delay[(i + 2) & delay_mask]) * gain;
+			  /* Add contributions from the two readpointers, scaled by thier
+				  * distance from the write pointer */
+			  i = rptr.part.in;
+			  out += cube_interp((float)rptr.part.fr * 0.0000152587f,
+                             delay[(i - 1) & delay_mask], delay[i],
+                             delay[(i + 1) & delay_mask],
+                             delay[(i + 2) & delay_mask]) * (1.0f - gain);
+			  i += delay_ofs;
+			  out += cube_interp((float)rptr.part.fr * 0.0000152587f,
+                             delay[(i - 1) & delay_mask], delay[i & delay_mask],
+                             delay[(i + 1) & delay_mask],
+                             delay[(i + 2) & delay_mask]) * gain;
 	
-	buffer_write(output[pos], out);
+			  buffer_write(output[pos], out);
 
-	/* Increment ringbuffer pointers */
-	wptr = (wptr + 1) & delay_mask;
-	rptr.all += om.all;
-	rptr.part.in &= delay_mask;
-      }
+			  /* Increment ringbuffer pointers */
+			  wptr = (wptr + 1) & delay_mask;
+			  rptr.all += om.all;
+			  rptr.part.in &= delay_mask;
+          }
 
-    plugin_data->rptr.all = rptr.all;
-    plugin_data->wptr = wptr;
-    plugin_data->delay_mask = delay_mask;
-    plugin_data->delay_ofs = delay_ofs;
-    plugin_data->last_gain = gain;
-    plugin_data->count = count;
-    plugin_data->last_inc = gain_inc;
+          plugin_data->rptr.all = rptr.all;
+          plugin_data->wptr = wptr;
+          plugin_data->delay_mask = delay_mask;
+          plugin_data->delay_ofs = delay_ofs;
+          plugin_data->last_gain = gain;
+          plugin_data->count = count;
+          plugin_data->last_inc = gain_inc;
 
-    *(plugin_data->latency) = delay_ofs/2;
+          *(plugin_data->latency) = delay_ofs/2;
+		}
+    
     ]]></callback>
+
+    <port label="enabled" dir="input" type="control" hint="toggled,default_1">
+      <name>Enabled</name>
+      <range min="0" max="1"/>
+    </port>
 
     <port label="pitch" dir="input" type="control" hint="logarithmic,default_1">
       <name>Pitch shift</name>
