@@ -43,7 +43,7 @@
     
     	unsigned long pos;
     	
-		if (enabled == 0 || pitch == 1.0)
+		if (enabled == 0)
 		{
 			//Send input direct to output (no processing)
             for (pos = 0; pos < sample_count; pos++)
