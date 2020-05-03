@@ -14,7 +14,7 @@
       #include "ladspa-util.h"
 
       /* Beware of dependcies if you change this */
-      #define DELAY_SIZE 8192
+      #define DELAY_SIZE 8192      
     ]]></code>
   </global>
 
@@ -55,7 +55,12 @@
 	        float gain = last_gain, gain_inc = last_inc;
           	unsigned int i;
 
-          	om.all = f_round(pitch * 65536.0f);
+			float p = pitch;
+
+			if (cents != 0)
+				p = pow(2, cents/1200); /* Convert cents to frequency multiplyer */
+
+          	om.all = f_round(p * 65536.0f);
 
 			if (size != last_size) {
     			int size_tmp = f_round(size);
@@ -128,9 +133,15 @@
     </port>
 
     <port label="pitch" dir="input" type="control" hint="logarithmic,default_1">
-      <name>Pitch shift</name>
+      <name>Pitch shift (Frequency)</name>
       <p>The multiple of the output pitch, eg. 2.0 will increase the pitch by one octave.</p>
       <range min="0.25" max="4.0"/>
+    </port>
+
+    <port label="cents" dir="input" type="control" hint="integer,default_0">
+      <name>Pitch shift (Cents)</name>
+      <p>Pitch shift in cents. Overrides frequency control.</p>
+      <range min="-100" max="100"/>
     </port>
 
     <port label="size" dir="input" type="control" hint="integer,default_middle">
