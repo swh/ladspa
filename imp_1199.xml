@@ -47,9 +47,7 @@
 
       #include "impulses/all.h"
 
-      fft_plan plan_rc[IMPULSES],
-               plan_cr[IMPULSES];
-
+      static fft_plan *g_plan_rc, *g_plan_cr;
       static fftw_real *real_in, *real_out, *comp_in, *comp_out;
 
       unsigned int fft_length[IMPULSES];
@@ -72,27 +70,25 @@
 
 	fft_length[id] = fftl;
 #ifdef FFTW3
-	plan_rc[id] = fftwf_plan_r2r_1d(fftl, real_in, comp_out, FFTW_R2HC, FFTW_MEASURE);
-	plan_cr[id] = fftwf_plan_r2r_1d(fftl, comp_in, real_out, FFTW_HC2R, FFTW_MEASURE);
+	g_plan_rc[id] = fftwf_plan_r2r_1d(fftl, real_in, comp_out, FFTW_R2HC, FFTW_MEASURE);
+	g_plan_cr[id] = fftwf_plan_r2r_1d(fftl, comp_in, real_out, FFTW_HC2R, FFTW_MEASURE);
 	tmp_plan = fftwf_plan_r2r_1d(fftl, impulse_time, out, FFTW_R2HC, FFTW_MEASURE);
 #else
-        plan_rc[id] = rfftw_create_plan(fftl, FFTW_REAL_TO_COMPLEX, FFTW_ESTIMATE);
-        plan_cr[id] = rfftw_create_plan(fftl, FFTW_COMPLEX_TO_REAL, FFTW_ESTIMATE);
+        g_plan_rc[id] = rfftw_create_plan(fftl, FFTW_REAL_TO_COMPLEX, FFTW_ESTIMATE);
+        g_plan_cr[id] = rfftw_create_plan(fftl, FFTW_COMPLEX_TO_REAL, FFTW_ESTIMATE);
 #endif
 
         for (i=0; i<length; i++) {
           impulse_time[i] = imp[i];
         }
-		
-        int last = i;
-        for (i = 0; i<fftl; i++) {
-          if (i >=last) impulse_time[i] = 0.0f;
+        for (; i<fftl; i++) {
+          impulse_time[i] = 0.0f;
         }
 #ifdef FFTW3
 	fftwf_execute(tmp_plan);
 	fftwf_destroy_plan(tmp_plan);
 #else
-        rfftw_one(plan_rc[id], impulse_time, out);
+        rfftw_one(g_plan_rc[id], impulse_time, out);
 #endif
       }
         
@@ -150,8 +146,12 @@
       op = local_malloc(MAX_FFT_LENGTH * sizeof(fftw_real));
       overlap = local_malloc(MAX_FFT_LENGTH * sizeof(float));
       opc = local_malloc(SEG_LENGTH * sizeof(LADSPA_Data));
+      plan_rc = local_malloc(IMPULSES * sizeof(fft_plan));
+      plan_cr = local_malloc(IMPULSES * sizeof(fft_plan));
 
       /* transform the impulses */
+      g_plan_rc = plan_rc;
+      g_plan_cr = plan_cr;
       real_in = block_time;
       comp_out = block_freq;
       comp_in = block_freq;
@@ -185,6 +185,8 @@
       for (i=0; i<IMPULSES; i++) {
         local_free(plugin_data->impulse_freq[i]);
       }
+      local_free(plugin_data->plan_cr);
+      local_free(plugin_data->plan_rc);
       local_free(plugin_data->impulse_freq);
     ]]></callback>
 
@@ -310,5 +312,7 @@
     <instance-data label="in_ptr" type="unsigned long" />
     <instance-data label="out_ptr" type="unsigned long" />
     <instance-data label="count" type="unsigned int" />
+    <instance-data label="plan_rc" type="fft_plan *" />
+    <instance-data label="plan_cr" type="fft_plan *" />
   </plugin>
 </ladspa>
