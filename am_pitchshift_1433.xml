@@ -9,6 +9,9 @@
     <meta name="properties" value="HARD_RT_CAPABLE"/>
     <code><![CDATA[
       #include <stdlib.h>
+      #ifndef _USE_MATH_DEFINES
+      #define _USE_MATH_DEFINES /* required for M_PI on some systems */
+      #endif
       #include <math.h>
 
       #include "ladspa-util.h"
