@@ -168,8 +168,8 @@ lfo2_d = blo_h_new(tables, BLO_SINE, (float)s_rate);
 xover_b1_data = calloc(1, sizeof(sv_filter));
 xover_b2_data = calloc(1, sizeof(sv_filter));
 
-dela_data = malloc(3 * sizeof(float));
-dela_pos = malloc(3 * sizeof(int));
+dela_data = malloc(3 * sizeof(float *));
+dela_pos = malloc(3 * sizeof(int *));
 filt_data = malloc(3 * sizeof(sv_filter *));
 for (i = 0; i &lt; 3; i++) {
 	dela_data[i] = malloc(sample_rate * 2 * sizeof(float));
