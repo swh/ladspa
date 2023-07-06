@@ -13,6 +13,11 @@
                 <p>Produces an unusual distortion effect, for a more amp like tone, see the valve saturation plugin (section \ref{valve}).</p>
 
 		<callback event="run"><![CDATA[
+
+			#ifndef _USE_MATH_DEFINES
+			#define _USE_MATH_DEFINES
+			#endif
+
 			float coef = wrap * M_PI;
 			unsigned long pos;
 
