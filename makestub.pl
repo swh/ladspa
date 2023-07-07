@@ -81,6 +81,9 @@ print <<EOB;
 \#define         __USE_ISOC99    1
 \#define         __USE_ISOC9X    1
 
+\#ifndef _USE_MATH_DEFINES
+\#define _USE_MATH_DEFINES
+\#endif
 \#include <math.h>
 
 \#include "ladspa.h"
