@@ -37,7 +37,6 @@
 
 #include <string.h>
 #include "../config.h"
-#include <math.h>
 
 #include "pitchscale.h"
 
