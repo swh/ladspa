@@ -1,4 +1,5 @@
-#!/usr/bin/perl -w
+#!/usr/bin/env perl
+use warnings;
 
 use List::MoreUtils qw(any);
 use XML::Parser;

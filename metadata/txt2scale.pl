@@ -1,4 +1,5 @@
-#!/usr/bin/perl -w
+#!/usr/bin/env perl
+use warnings;
 
 print <<EOB;
 <?xml version='1.0' encoding='UTF-8'?>
