@@ -12,6 +12,7 @@
       #include <stdio.h>
 
       #define MIN(a,b) ((a) < (b) ? (a) : (b))
+      #define MAX(a,b) ((a) > (b) ? (a) : (b))
       #define CALC_DELAY(delaytime) \
         (f_clamp (delaytime * sample_rate, 1.f, (float)(buffer_size + 1)))
 
@@ -112,7 +113,7 @@
           write_phase = (write_phase + 1) % delay2;
 
           read_phase = delay2 - write_phase;
-          idelay_samples = (long)delay_samples;
+          idelay_samples = MAX(1,(long)delay_samples);
           read = wet * buffer[read_phase]   + (dry * insamp);
 
           if ((write_phase % idelay_samples) < xfade_samp) {
